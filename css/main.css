@@ -12,7 +12,8 @@
    ========================================================================== */
 
 html {
-  background: #000;
+  background-color: #000;
+  background-image: url(../img/background.gif);
   color: #efefef;
   font-size: 1em;
   line-height: 1.4;
@@ -46,6 +47,7 @@ body {
 
 table {
   margin: 0 auto;
+  background: black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,12 +91,27 @@ table {
   text-align: left;
 }
 
+img {
+  max-width: 100%;
+}
+
 footer {
   margin-top: 1rem;
 }
 
 .center {
   text-align: center;
+}
+
+.music-links {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  font-size: 1.4rem;
+
 }
 
 /*
