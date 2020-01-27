@@ -25,8 +25,12 @@
 
   <table border="3" cellpadding="16" style="max-width: 768px">
     <tr>
-      <td id="promo">
-        <img src="img/promo.gif" height="500" alt="Cool cats">
+      <td id="promo" class="center">
+        <img id="promoImg" src="img/promo.gif" height="500" alt="Cool cats">
+        <button
+          style="margin-top: 1rem; padding: 0.5rem 1rem"
+          onclick="showRandomCreature()"
+        >BONUS: CLICK TO SEE A RANDOM CREATURE COMPANION!</button>
       </td>
     </tr>
     <tr>
@@ -84,7 +88,16 @@
     <tr>
       <td>
         <h2>Bio</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem doloribus aut eum, quaerat eveniet veritatis unde voluptate at ducimus voluptatum soluta beatae laudantium, molestias repellat temporibus architecto, reprehenderit eius sequi!</p>
+        <p>Vile Creature is a two piece blackened doom metal outfit hailing from  sunny Hamilton, Ontario. They'd prefer you call them a 9 piece blackened doom metal outfit but their 6 cats and 1 dog seem to not count, which is pretty rude to be honest. They take themselves very seriously, as you can tell from their serious website.</p>
+
+        <div class="separator"></div>
+
+        <h2>NEWS!! <img src="img/gerbil.gif" alt=""/></h2>
+        <ul>
+          <li>
+            Jan 24, 2020 - <a href="new-album-info.html">EXCITING NEW ALBUM INFO ANNOUNCED</a>
+          </li>
+        </ul>
       </td>
     </tr>
     <tr>
@@ -143,14 +156,31 @@
 
   </footer>
 
-  <div id="loading">
-    <img src="img/loading.gif" alt="Loading…">
+  <div class="hidden">
+    <audio id="meow" src="wav/meow.wav"></audio>
   </div>
 
+  <!-- <div id="loading">
+    <img src="img/loading.gif" alt="Loading…">
+  </div> -->
+
   <script>
-    setTimeout(() => {
-      document.getElementById('loading').classList.add('hidden');
-    }, 3000);
+    // setTimeout(() => {
+    //   document.getElementById('loading').classList.add('hidden');
+    // }, 3000);
+
+    const meow = () => {
+      const audio = document.getElementById("meow");
+       audio.play();
+    }
+
+    const showRandomCreature = () => {
+        const getRandomInt = (min, max) =>
+          Math.floor(Math.random() * (max - min + 1)) + min;
+        const img = document.getElementById('promoImg');
+        img.setAttribute('src', `img/animals-${getRandomInt(1,9)}.gif`);
+        meow();
+    }
   </script>
 </body>
 
